@@ -30,5 +30,5 @@ for index, row in parsed.iterrows():
 		pr_json['area'] = areas[index]
 		pr_json['year'] = year
 		pr_json['price'] = row
-		requests.post(data_store_url, payload = pr_json)
+		res = requests.post(data_store_url, payload = pr_json)
 		
