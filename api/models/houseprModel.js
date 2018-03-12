@@ -18,4 +18,4 @@ var houseprSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('housePr', houseprSchema);
+module.exports = mongoose.model('housepr', houseprSchema);

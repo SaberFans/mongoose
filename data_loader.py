@@ -1,7 +1,11 @@
+import requests
 import pandas as pd
 from pandas import ExcelFile
 import math
 
+hostname = "localhost"
+port = "3000"
+data_store_url = hostname+":"+port+"/data/hprice"
 data_path = "house_price_per_year.xlsx"
 row_num = 20
  
@@ -26,5 +30,5 @@ for index, row in parsed.iterrows():
 		pr_json['area'] = areas[index]
 		pr_json['year'] = year
 		pr_json['price'] = row
-		print(pr_json)
+		requests.post(data_store_url, payload = pr_json)
 		

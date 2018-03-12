@@ -2,7 +2,7 @@
 
 
 var mongoose = require('mongoose'),
-  housepr = mongoose.model('housePr');
+  housepr = mongoose.model('housepr');
 
 exports.show_all = function(req, res) {
   housepr.find({}, function(err, data) {
@@ -11,7 +11,7 @@ exports.show_all = function(req, res) {
     res.json(data);
   });
 };
-exports.add_data = function(req, res) {  
+exports.add_data = function(req, res) {
   console.log(req.body)
   var dobj = new housepr(req.body);
   console.log(dobj)

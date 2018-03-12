@@ -2,12 +2,13 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 3000;
   mongoose = require('mongoose'),
-  Task = require('./api/models/iotModel'), //created model loading here
+  iotModel = require('./api/models/iotModel'), //created model loading here
+  housePrModel = require('./api/models/houseprModel')
   bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://mongodb:20071/iot'); 
+mongoose.connect('mongodb://localhost:27017/iot'); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +20,5 @@ routes(app); //register the route
 
 
 app.listen(port);
-
 
 console.log('IoT data store API server started on: ' + port);
