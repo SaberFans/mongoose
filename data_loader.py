@@ -5,7 +5,8 @@ import math
 
 hostname = "http://localhost"
 port = "3000"
-data_store_url = hostname+":"+port+"/data/hprice"
+api = "/data/hprice"
+data_store_url = hostname+":"+port+api
 data_path = "house_price_per_year.xlsx"
 row_num = 20
  
