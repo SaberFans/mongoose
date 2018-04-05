@@ -26,7 +26,11 @@ app.use(bodyParser.json());
 var routes = require('./api/routes/iotRouter'); //importing route
 routes(app); //register the route
 
+//assuming app is express Object.
+app.get('/',function(req,res){
+     res.sendFile('index.html');
 
+});
 app.listen(port);
 
 
