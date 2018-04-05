@@ -22,3 +22,16 @@ routes(app); //register the route
 app.listen(port);
 
 console.log('IoT data store API server started on: ' + port);
+
+io.sockets.on('connection', function(socket) {
+  setInterval(function(){
+    console.log('Try to fetch data' + error);
+    } else {
+      // You must send time (X axis) and a temperature value (Y axis) 
+      
+      var date = new Date().getTime();
+      var temp = parseFloat("22");
+      socket.emit('temperatureUpdate', date, temp); 
+    }
+  }, 5000);
+});
