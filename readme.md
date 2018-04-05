@@ -10,7 +10,8 @@ Raspberry Pi Data Rendering
 
 ## Data Visualization
 The socket.io subscribes the data updates from database, draw it on the chats.
-To access, go to http://YOUR_IP:8000
+To access, go to ```http://YOUR_IP:8000```
+
 ### Data Service Store Top Level Structure
 
 
