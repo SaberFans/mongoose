@@ -3,8 +3,10 @@ var express = require('express'),
   port = process.env.PORT || 3000;
   mongoose = require('mongoose'),
   iotModel = require('./api/models/iotModel'), //created model loading here
-  housePrModel = require('./api/models/houseprModel')
+  housePrModel = require('./api/models/houseprModel'),
+  io = require('socket.io').listen(app),
   bodyParser = require('body-parser');
+
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
