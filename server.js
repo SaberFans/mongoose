@@ -1,10 +1,17 @@
 var express = require('express'),
-  app = express(),
-  port = process.env.PORT || 3000;
+  http = require('http'),
+  app = module.exports.app = express(),
+  // set up the socket http handler
+  server = http.createServer(app),
+  io = require('socket.io').listen(server),
+  // socket is listening on 8000
+  server.listen(8000),
+
+  port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
   iotModel = require('./api/models/iotModel'), //created model loading here
   housePrModel = require('./api/models/houseprModel'),
-  io = require('socket.io').listen(app),
+  
   bodyParser = require('body-parser');
 
 
